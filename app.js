@@ -1,28 +1,3 @@
-// let month = [
-//   "January",
-//   "February",
-//   "March",
-//   "april",
-//   "may",
-//   "june",
-//   "july",
-//   "august",
-//   "september",
-//   "octobr",
-//   "november",
-//   "december",
-// ];
-
-// let days = [
-//   "saturday",
-//   "sunday",
-//   "monday",
-//   "tuesday",
-//   "wednesday",
-//   "thursday",
-//   "friday",
-// ];
-
 const inputElem = document.querySelector("input");
 
 let apiData = {
@@ -56,6 +31,44 @@ function showData(data) {
 
   let weatherElem = document.querySelector(".weather");
   weatherElem.innerHTML = `${data.weather[0].main}`;
+
+  let dateElem = document.querySelector(".date");
+  dateElem.innerHTML = showDate();
+}
+
+function showDate() {
+  let months = [
+    "January",
+    "February",
+    "March",
+    "april",
+    "may",
+    "june",
+    "july",
+    "august",
+    "september",
+    "octobr",
+    "november",
+    "december",
+  ];
+
+  let days = [
+    "saturday",
+    "sunday",
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+  ];
+
+  let now = new Date();
+  let day = days[now.getDay()];
+  let month = months[now.getMonth()];
+  let year = now.getFullYear();
+  let date = now.getDate();
+
+  return `${day} ${date} ${month} ${year}`;
 }
 
 inputElem.addEventListener("keypress", (event) => {

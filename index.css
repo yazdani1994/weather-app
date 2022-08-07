@@ -6,7 +6,7 @@
 
 body {
   font-family: "montserrat", sans-serif;
-  background-image: url("/img/Pngtreesky.png");
+  background-image: url("/img/62f004c8876c4.jpg");
   background-size: cover;
   background-position: top center;
 }
@@ -35,7 +35,7 @@ header input {
   padding: 10px 15px;
   border: none;
   outline: none;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.674);
   border-radius: 16px 0px 16px 0px;
   border-bottom: 3px solid #df8e00;
 
@@ -46,7 +46,7 @@ header input {
 }
 
 header input:focus {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.813);
 }
 
 main {
