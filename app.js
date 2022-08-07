@@ -34,8 +34,28 @@ function fetchData() {
   let cityValue = inputElem.value;
 
   fetch(`${apiData.url}${cityValue}&&appid=${apiData.key}`).then((res) =>
-    res.json().then((data) => console.log(data))
+    res.json().then((data) => {
+      console.log(data);
+
+      showData(data);
+    })
   );
+}
+
+function showData(data) {
+  let cityElem = document.querySelector(".city");
+  cityElem.innerHTML = `${data.name}, ${data.sys.country}`;
+
+  let tempElem = document.querySelector(".temp");
+  tempElem.innerHTML = `${Math.floor(data.main.temp - 273.15)}°c`;
+
+  let tempsElem = document.querySelector(".hi-low");
+  tempsElem.innerHTML = `${Math.floor(
+    data.main.temp_min - 273.15
+  )}°c / ${Math.floor(data.main.temp_max - 273.15)}°c`;
+
+  let weatherElem = document.querySelector(".weather");
+  weatherElem.innerHTML = `${data.weather[0].main}`;
 }
 
 inputElem.addEventListener("keypress", (event) => {
