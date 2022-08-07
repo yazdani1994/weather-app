@@ -7,7 +7,6 @@ let apiData = {
 
 function fetchData() {
   let cityValue = inputElem.value;
-
   fetch(`${apiData.url}${cityValue}&&appid=${apiData.key}`).then((res) =>
     res.json().then((data) => {
       console.log(data);
